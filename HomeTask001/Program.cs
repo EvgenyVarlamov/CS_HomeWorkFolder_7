@@ -10,14 +10,13 @@ int m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите n: ");
 int n = Convert.ToInt32(Console.ReadLine());
 
-float[,] array = new float[m,n];
+double[,] array = new double[m,n];
 
 for (int i = 0; i < m; i++)
 {
     for (int j = 0 ; j < n; j++)
     {
-        float temporaryValue = new Random().Next(-99, 100); // без временной переменной выдаёт только целые числа
-        array[i,j] = temporaryValue / 10; // работет также как и такая запись: array[i,j] = Convert.ToSingle(Math.Round(temporaryValue/10, 1));
+        array[i,j] = Math.Round(Convert.ToDouble(new Random().Next(-99, 100))/10, 1);
         Console.Write(array[i,j] + " ");
     }
     Console.WriteLine();
